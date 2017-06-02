@@ -1,5 +1,5 @@
-# A0 Poster: A LaTeX example
-This is an example poster done in LaTeX.
+# IEEE Example Paper 
+This is an example paper done in LaTeX.
 The author is [Ian McLoughlin](https://ianmcloughlin.github.io).
 
 #### Compilation
