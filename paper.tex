@@ -1,48 +1,106 @@
+% Temlate for an article written in the IEEE style.
 \documentclass[journal]{IEEEtran}
-
-
-\usepackage[absolute,overlay]{textpos}
+% Enables the use of colour. 
 \usepackage{xcolor}
-\usepackage{lmodern}
+% Syntax high-lighting for code. Requires Python's pygments.
 \usepackage{minted}
-\usepackage{upquote}
+% Enables the use of umlauts and other accents.
 \usepackage[utf8]{inputenc}
+% Diagrams.
 \usepackage{tikz}
-\usepackage{adjustbox}
-\usepackage{hyperref}
-\usepackage{booktabs}
+% Settings for captions, such as sideways captions.
+\usepackage{caption}
+% Symbols for units, like degrees and ohms.
+\usepackage{gensymb}
+% Latin modern fonts - better looking than the defaults.
+\usepackage{lmodern}
+% Allows for columns spanning multiple rows in tables.
 \usepackage{multirow}
-\usepackage{array}
-\usepackage{xspace}
+% Better looking tables, including nicer borders.
+\usepackage{booktabs}
+% More math symbols.
 \usepackage{amssymb}
+% More math fonts, like mathbb.
 \usepackage{amsfonts}
+% More math layouts, equation arrays, etc.
+\usepackage{amsmath}
+% More theorem environments.
+\usepackage{amsthm}
+% More column formats for tables.
+\usepackage{array}
+% Adjust the sizes of box environments.
+\usepackage{adjustbox}
+% Better looking single quotes in verbatim and minted environments.
+\usepackage{upquote}
+% Better blank space decisions.
+\usepackage{xspace}
+% Better looking tikz trees.
+\usepackage{forest}
+% URLs.
+\usepackage{hyperref}
+% Plotting.
 \usepackage{pgfplots}
-\usepackage{ragged2e}
+% Filler text.
+\usepackage{lipsum}
+% Line spacing.
+\usepackage{setspace}
+% Changing spacing on pages.
+\usepackage{geometry}
+% Gantt charts.
+\usepackage{pgfgantt}
 
-\usemintedstyle{manni}
-\usetikzlibrary{mindmap,shadows,arrows,positioning,chains,fit,shapes,decorations.markings}
 
+% Use latest pgfplots.
+\pgfplotsset{compat=newest}
+
+% Various tikz libraries.
+% For drawing mind maps.
+\usetikzlibrary{mindmap}
+% For adding shadows.
+\usetikzlibrary{shadows}
+% Extra arrows tips.
+\usetikzlibrary{arrows.meta}
+% Old arrows.
+\usetikzlibrary{arrows}
+% Automata.
+\usetikzlibrary{automata}
+% For more positioning options.
+\usetikzlibrary{positioning}
+% Creating chains of nodes on a line.
+\usetikzlibrary{chains}
+% Fitting node to contain set of coordinates.
+\usetikzlibrary{fit}
+% Extra shapes for drawing.
+\usetikzlibrary{shapes}
+% For markings on paths.
+\usetikzlibrary{decorations.markings}
+% For advanced calculations.
+\usetikzlibrary{calc}
+
+% GMIT colours.
 \definecolor{gmitblue}{RGB}{20,134,225}
 \definecolor{gmitred}{RGB}{220,20,60}
 \definecolor{gmitgrey}{RGB}{67,67,67}
 
 
-\makeatletter
-\expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{{\strut ##1}}}
-\makeatother
+% Tell minted to use the following colour scheme. 
+\usemintedstyle{manni}
+% Set some minted options.
+\setminted{frame=lines, framesep=2mm, baselinestretch=1.2, linenos}
+
 
 \begin{document}
 
-\title{Example IEEE paper}
+\title{Example article}
 
-\author{Dr Ian McLoughlin (ian.mcloughlin@gmit.ie) \\ Department and University Name}
-\date{}
+\author{Dr Ian McLoughlin (ian.mcloughlin@gmit.ie) \\ Galway-Mayo Institute of Technology}
+\date{\today}
 
 \maketitle
 
 
 \begin{abstract}
-	Beacons are cool.
+  The abstract gives a brief overview of the main contribution of the paper~\cite{gmit:home}.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -60,6 +118,7 @@ IEEE, IEEEtran, journal, \LaTeX, paper, template.
 
 \section{Conclusion}
 
-% Include bib
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
 
 \end{document} 
