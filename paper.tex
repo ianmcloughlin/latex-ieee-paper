@@ -1,4 +1,4 @@
-% Temlate for an article written in the IEEE style.
+% Template for an article written in the IEEE style.
 \documentclass[journal]{IEEEtran}
 % Enables the use of colour. 
 \usepackage{xcolor}
@@ -49,7 +49,6 @@
 % Gantt charts.
 \usepackage{pgfgantt}
 
-
 % Use latest pgfplots.
 \pgfplotsset{compat=newest}
 
@@ -82,76 +81,82 @@
 \definecolor{gmitred}{RGB}{220,20,60}
 \definecolor{gmitgrey}{RGB}{67,67,67}
 
-
 % Tell minted to use the following colour scheme. 
 \usemintedstyle{manni}
 % Set some minted options.
 \setminted{frame=lines, framesep=2mm, baselinestretch=1.2, linenos}
 
-
-\begin{document}
-
+% Set the title for \maketitle below.
 \title{Example paper}
-
+% Likewise set the author(s). The \\ starts a new line.
 \author{Dr Ian McLoughlin (ian.mcloughlin@gmit.ie) \\ Galway-Mayo Institute of Technology}
+% Set the date.
 \date{\today}
 
-\maketitle
+% Begin the document contents.
+\begin{document}
+
+  % Show the title.
+  \maketitle
+
+  % Write the abstract.
+  \begin{abstract}
+    The abstract gives a brief overview of the main contribution of the paper.
+    The important results in the paper should be front and centre here.
+    Many people who arrive at your paper will only read the abstract, and those
+    who do read it will likely decide to based on the abstract.
+  \end{abstract}
+
+  % Most journals provide a standard list keywords for indexing.
+  % You should select the most relevant ones from the journal's website.
+  \begin{IEEEkeywords}
+    IEEE, IEEEtran, journal, \LaTeX, paper, template.
+  \end{IEEEkeywords}
 
 
-\begin{abstract}
-  The abstract gives a brief overview of the main contribution of the paper.
-  The important results in the paper should be front and centre here.
-  Many people who arrive at your paper will only read the abstract, and those
-  who do read it will likely decide to based on the abstract.
-\end{abstract}
+  % Begin the paper itself.
+  \section{Introduction}
+    The introduction to the paper should expand on the abstract, give the reader
+    an idea of what you assume they already know, and inform them of the layout of
+    the paper.
 
-\begin{IEEEkeywords}
-  IEEE, IEEEtran, journal, \LaTeX, paper, template.
-\end{IEEEkeywords}
+  \section{Literature}
+    Sometimes a review of the relevant literature in an area is included in the
+    introduction, but it is no harm to put it in its own section. The paper
+    overall should be full of references to other papers, but this is particularly
+    the case for the literature section.
+    
+    To find relevant literature, it's no harm to first have a general Google of
+    the topic. However, you will eventually want to be systematic about it so
+    that you don't have any obvious omissions of particularly relevant works.
+    A good way to do this is to find a list of journals relevant to your topic,
+    covering different publishers, decide on a list of search terms, and 
+    one-by-one search through the journals. For the papers that are returned,
+    I recommend skimming the abstracts to determine whether the paper is worth
+    reading. Then you must read them.
 
+    Following that, it's a good idea to keep an eye on collections like
+    arXiv~\cite{arxiv:home}.
 
-\section{Introduction}
-  The introduction to the paper should expand on the abstract, give the reader
-  an idea of what you assume they already know, and inform them of the layout of
-  the paper.
+  \section{Main sections}
+    After the introduction and summary of the literature to date, you should start
+    into the main contribution of your paper. How you organise that in sections
+    is a matter of what kind of result it is. If you have run some experiments
+    or your results are empirical, you might have a methodology section, followed
+    by a results section.
 
-\section{Literature}
-  Sometimes a review of the relevant literature in an area is included in the
-  introduction, but it is no harm to put it in its own section. The paper
-  overall should be full of references to other papers, but this is particularly
-  the case for the literature section.
-  
-  To find relevant literature, it's no harm to first have a general Google of
-  the topic. However, you will eventually want to be systematic about it so
-  that you don't have any obvious omissions of particularly relevant works.
-  A good way to do this is to find a list of journals relevant to your topic,
-  covering different publishers, decide on a list of search terms, and 
-  one-by-one search through the journals. For the papers that are returned,
-  I recommend skimming the abstracts to determine whether the paper is worth
-  reading. Then you must read them.
+    However, not every paper will have a methodology section. Generally speaking,
+    if you are proving something outright, like showing that an algorithm has a
+    certain property, you usually organise the sections in a bespoke manner suited
+    to your result. You might, for instance, have an algorithm section describing
+    the algorithm followed by a complexity section describing the computational
+    complexity of the algorithm.
 
-  Following that, it's a good idea to keep an eye on collections like
-   arXiv~\cite{arxiv:home}.
+  \section{Conclusion}
+    The conclusion often just summarises what the paper has just said.
 
-\section{Main sections}
-  After the introduction and summary of the literature to date, you should start
-  into the main contribution of your paper. How you organise that in sections
-  is a matter of what kind of result it is. If you have run some experiments
-  or your results are empirical, you might have a methodology section, followed
-  by a results section.
-
-  However, not every paper will have a methodology section. Generally speaking,
-  if you are proving something outright, like showing that an algorithm has a
-  certain property, you usually organise the sections in a bespoke manner suited
-  to your result. You might, for instance, have an algorithm section describing
-  the algorithm followed by a complexity section describing the computational
-  complexity of the algorithm.
-
-\section{Conclusion}
-  The conclusion often just summarises what the paper has just said.
-
-\bibliographystyle{ieeetr}
-\bibliography{bibliography}
+  % Add the bibliography based on the uses of \cite and bibliography.bib.
+  \bibliographystyle{ieeetr}
+  \bibliography{bibliography}
 
 \end{document} 
